@@ -24,20 +24,29 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     var end = new Date() - start
     console.log('\nExecution time connection: %dms', end)
 
-    //START TIMESTAMP IMPORT
+    //START TIMESTAMP IMPORTs
     var start2 = new Date()
 
     //creating collection 'testCase' and bulk importing 'listnames' object
-    db.collection('testCase').insertMany(listnames, (error, result) => {
-        if(error){
-            return console.log('ERROR')
-        }
-        console.log("\n" + result.insertedCount + " DOCUMENTS ADDED")
+    // db.collection('testCase').insertMany(listnames, (error, result) => {
+    //     if(error){
+    //         return console.log('ERROR')
+    //     }
+    //     console.log("\n" + result.insertedCount + " DOCUMENTS ADDED")
 
+    //     //END TIMESTAMP IMPORT
+    //     var end2 = new Date() - start2
+    //     console.info('\nExecution time import: %dms', end2) 
+    // })
+
+    db.collection('testCase').insertMany(listnames).then((result) => {
+
+        console.log("\n" + result.insertedCount + " DOCUMENTS ADDED")
         //END TIMESTAMP IMPORT
         var end2 = new Date() - start2
         console.info('\nExecution time import: %dms', end2) 
-    })
 
-     
+    }).catch((error) => {
+        console.log(" MONGO ERROR! ")
+    })   
 })

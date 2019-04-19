@@ -8,7 +8,7 @@ const workbook = new XLSX.utils.book_new()
 var ws_name = "Names";
  
 /* make worksheet */
-var ws_data = [['Name', 'Number']]
+var ws_data = [["Name", "Number"]]
 
 for (let index = 0; index < 20000; index++) {
   /* Add the worksheet to the workbook */
