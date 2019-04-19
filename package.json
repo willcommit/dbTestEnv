@@ -1,0 +1,17 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "startDB": "C:/Users/welfv/mongodb/bin/mongod.exe --dbpath=C:/Users/welfv/mongodb-data",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.2.3",
+    "xlsx": "^0.14.2"
+  }
+}
